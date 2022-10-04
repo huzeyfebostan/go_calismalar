@@ -10,10 +10,11 @@ import (
 
 func collatz(number int) int {
 	if number%2 == 0 {
-		number /= 2
+		number = number / 2
 		return number
 	} else {
-		number *= 3 + 1
+		number = number*3 + 1
+		return number
 	}
 	return 0
 }
@@ -29,7 +30,7 @@ func main() {
 	fmt.Println(num)
 	collatznum := num
 	for {
-		collatznum = collatz(collatznum)
+		collatznum = int(collatz(collatznum))
 		fmt.Println(collatznum)
 		if collatznum == 1 {
 			break
